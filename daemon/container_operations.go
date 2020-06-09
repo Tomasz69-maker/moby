@@ -538,7 +538,7 @@ func (daemon *Daemon) allocateNetwork(container *container.Container) (retErr er
 
 	// Cleanup any stale sandbox left over due to ungraceful daemon shutdown
 	if err := controller.SandboxDestroy(container.ID); err != nil {
-		logrus.WithError(err).Errorf("failed to cleanup up stale network sandbox for container %s", container.ID)
+		logrus.Errorf("failed to cleanup up stale network sandbox for container %s", container.ID)
 	}
 
 	if container.Config.NetworkDisabled || container.HostConfig.NetworkMode.IsContainer() {
