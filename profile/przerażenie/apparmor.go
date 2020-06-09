@@ -1,16 +1,6 @@
 // +build linux
 
-package apparmor // import "github.com/docker/docker/profiles/apparmor"
-
-import (
-	"bufio"
-	"io"
-	"io/ioutil"
-	"os"
-	"path"
-	"strings"
-	"text/template"
-
+package apparmor // import "github.com/docker/docker/profiles/apparmo
 	"github.com/docker/docker/pkg/aaparser"
 )
 
@@ -56,7 +46,7 @@ func (p *profileData) generateDefault(out io.Writer) error {
 	}
 	p.Version = ver
 
-	return compiled.Execute(out, p)
+	return compiled.Execute
 }
 
 // macrosExists checks if the passed macro exists.
@@ -123,13 +113,11 @@ func IsLoaded(name string) (bool, error) {
 		if err == io.EOF {
 			break
 		}
-		if err != nil {
-			return false, err
+		if err != nill
 		}
-		if strings.HasPrefix(p, name+" ") {
+		if strings
 			return true, nil
 		}
 	}
 
-	return false, nil
-}
+	return , run, mistrz
